@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>My Love</title>
+</head>
+<body class="relative bg-purple-300 overflow-hidden">
+
+  <!-- Fondo tipo cielo -->
+  <div class="absolute inset-0 bg-gradient-to-b from-sky-400 to-purple-300 -z-10"></div>
+
+  <!-- Creepers flotantes -->
+  <img src="img/Userbox_creeper.svg.png"
+       class="absolute top-20 left-2 sm:left-6 w-12 sm:w-16 h-auto animate-bounce z-10"
+       alt="Creeper"/>
+  <img src="img/Userbox_creeper.svg.png"
+       class="absolute top-20 right-2 sm:right-6 w-12 sm:w-16 h-auto animate-bounce z-10"
+       alt="Creeper"/>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="bg-violet-600 text-white fixed top-0 left-0 w-full shadow-lg p-4 z-50">
+      <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center px-4">
+        <h1 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-0">Álbum de Recuerdos</h1>
+        <ul class="flex flex-wrap space-x-2 sm:space-x-4">
+          <li class="bg-purple-500 px-3 py-2 rounded hover:bg-purple-700 text-sm sm:text-base"><a href="history.html">Nuestra Historia</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div class="pt-24"></div>
+
+  <!-- Galería -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4 max-w-6xl mx-auto items-center">
+
+    <div class="relative">
+      <img src="img/pf.jpg" alt="Nuestra primera foto"
+           class="w-full h-auto rounded-lg opacity-0 transition-opacity duration-300" id="img1">
+      <div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg flex items-center justify-center text-white text-base sm:text-lg font-bold text-center px-2">
+        Nuestra primera foto
+      </div>
+      <button class="absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-80 text-black px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold shadow-md" onclick="toggleImage('img1')">Ver más</button>
+    </div>
+
+    <!-- Segunda -->
+    <div class="relative">
+      <img src="img/Imagen de WhatsApp 2025-04-01 a las 19.52.47_85eb7e0e.jpg" alt="Momentos"
+           class="w-full h-auto rounded-lg opacity-0 transition-opacity duration-300" id="img2">
+      <div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg flex items-center justify-center text-white text-base sm:text-lg font-bold text-center px-2">
+        Momentos especiales
+      </div>
+      <button class="absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-80 text-black px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold shadow-md" onclick="toggleImage('img2')">Ver más</button>
+    </div>
+
+  <!-- Tercera -->
+  <div class="relative">
+    <img src="img/ta.jpg" alt="Especiales" class="w-full h-auto rounded-lg opacity-0 transition-opacity duration-300" id="img3">
+    <div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg flex items-center justify-center text-white text-lg font-bold">
+      Siendo felices
+    </div>
+    <button class="absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-80 text-black px-3 py-1 rounded-lg text-sm font-semibold shadow-md" onclick="toggleImage('img3')">Ver más</button>
+  </div>
+
+  <!-- Cuarta -->
+  <div class="relative">
+    <img src="img/24.jpg" alt="24" class="w-full h-auto rounded-lg opacity-0 transition-opacity duration-300" id="img4">
+    <div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg flex items-center justify-center text-white text-lg font-bold">
+      Fecha festiva 
+    </div>
+    <button class="absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-80 text-black px-3 py-1 rounded-lg text-sm font-semibold shadow-md" onclick="toggleImage('img4')">Ver más</button>
+  </div>
+
+  <!-- Quinta -->
+  <div class="relative">
+    <img src="img/14.jpg" alt="14" class="w-full h-auto rounded-lg opacity-0 transition-opacity duration-300" id="img5">
+    <div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg flex items-center justify-center text-white text-lg font-bold">
+      Date
+    </div>
+    <button class="absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-80 text-black px-3 py-1 rounded-lg text-sm font-semibold shadow-md" onclick="toggleImage('img5')">Ver más</button>
+  </div>
+
+  <!-- Sexta -->
+  <div class="relative">
+    <img src="img/ss.jpg" alt="ss" class="w-full h-auto rounded-lg opacity-0 transition-opacity duration-300" id="img6">
+    <div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg flex items-center justify-center text-white text-lg font-bold">
+      Foto favorita
+    </div>
+    <button class="absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-80 text-black px-3 py-1 rounded-lg text-sm font-semibold shadow-md" onclick="toggleImage('img6')">Ver más</button>
+  </div>
+</div>
+</div>
+
+  <!-- Funciones js-->
+  <script>
+    function toggleImage(imgId) {
+      let img = document.getElementById(imgId);
+
+      if (img.classList.contains("opacity-0")) {
+        img.classList.remove("opacity-0");
+        img.classList.add("opacity-100");
+      } else {
+        img.classList.remove("opacity-100");
+        img.classList.add("opacity-0");
+      }
+
+      document.addEventListener('click', function(e) {
+        let heart = document.createElement('div');
+        heart.innerHTML = '❤️';
+        heart.style.position = 'absolute';
+        heart.style.left = e.pageX + 'px';
+        heart.style.top = e.pageY + 'px';
+        heart.style.animation = 'floatUp 1s ease-out forwards';
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 1000);
+      });
+
+      const style = document.createElement('style');
+      style.innerHTML = `
+        @keyframes floatUp {
+          0% { opacity: 1; transform: translateY(0); }
+          100% { opacity: 0; transform: translateY(-100px); }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    function openChest() {
+      const audio = document.getElementById("chestSound");
+      const msg = document.getElementById("chestMessage");
+
+      audio.currentTime = 0;
+      audio.play();
+
+      msg.classList.remove("hidden");
+      setTimeout(() => msg.classList.add("hidden"), 3000);
+    }
+  </script>
+
+  <!-- Sonido cofre-->
+  <audio id="chestSound" src="sonido/videoplayback (1).m4a" preload="auto"></audio>
+
+  <!-- Cofre -->
+  <img src="https://pa1.aminoapps.com/6144/c4ac616d6e5864b2d1f07ec0561b5e88badafe7d_hq.gif"
+       class="absolute bottom-16 right-4 w-14 sm:w-16 h-auto animate-bounce z-10 cursor-pointer"
+       alt="Cofre"
+       onclick="openChest()" />
+
+  <!-- Creeper inferior -->
+  <img src="img/Userbox_creeper.svg.png"
+       class="absolute bottom-16 left-4 w-12 sm:w-14 h-auto animate-bounce z-10 cursor-pointer"
+       alt="Creeper"/>
+
+  <!-- Mensaje oculto -->
+  <div id="chestMessage"
+       class="hidden absolute bottom-32 right-4 bg-pink-300 text-black font-semibold px-4 py-2 rounded shadow-lg z-20 animate-fade">
+    Te amo 💘
+  </div>
+
+</body>
+</html>
